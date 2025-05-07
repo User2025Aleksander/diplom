@@ -1,0 +1,94 @@
+.authFormClose {
+    position: absolute;
+    top: -3000px;
+}
+.authFormOpen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 50%;
+    height: 400px;
+    top: 6%;
+    left: 25%;
+    margin: 0;
+    padding: 30px;
+    border-radius: 5px;
+    background: linear-gradient(350deg, #ff0000,#ff7b00,#ff0000,#ff6600,#fbff00);
+    z-index: 1;
+    transition: all 0.7s ease;
+}
+.h1 {
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+.signin {
+    height: 90px;
+    width: 300px;
+    border-radius: 8px;
+    position: relative;
+}
+.signin::before {
+    display: block;
+    position: relative;
+    height: 2px;
+    background: rgb(52, 56, 61);
+    content: '';
+    top: 44px;
+    margin-left: 20px;
+    z-index: 1;
+}
+.signin input:first-of-type {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.signin input:last-of-type {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.login,
+.password {
+    position: relative;
+    width: 280px;
+    height: 45px;
+    border: 0;
+    outline: 0;
+    top: -2px;
+    padding: 0 40px 0 20px;
+    font-weight: 400;
+    background: rgb(28, 30, 33);
+    box-shadow: inset -100px -100px 0 rgb(28, 30, 33);
+    color: white;
+}
+.login:focus,
+.password:focus {
+    color: white;
+}
+.button {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    color: rgb(52, 56, 61);    
+    outline: 0;
+    z-index: 2;
+    top: 19px;
+    right: -5px;
+    border: 6px solid rgb(52, 56, 61);
+    border-radius: 50px;
+    font-size: 30px;
+    text-indent: 0px;
+    padding-left: 9px;
+    text-align: center;
+    background: rgb(28, 30, 33);
+    box-shadow: inset -100px -100px 0 rgb(28, 30, 33);
+    transition: all 0.3s ease-in-out;
+}
+.button:hover {
+    color: #1677ff;
+    text-shadow: 0 0 10px #1677ff;
+    cursor: pointer;
+}
+.p {
+    font-size: 12px;
+}

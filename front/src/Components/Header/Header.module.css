@@ -1,0 +1,128 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, rgba(173, 250, 186, 0.8), #20ed31);
+
+}
+
+.title {
+    padding: 10px;
+}
+
+.title_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.logo {
+    height: 70px;
+}
+
+.title_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.nav {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.header__ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header__ul__list_item {
+    margin-right: 10px;
+}
+
+.header__ul__list_item__link {
+    padding: 5px 20px;
+    border-radius: 1px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #1F2A40;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.header__ul__list_item__link:hover {
+    background-color: #283f83
+}
+
+.header__ul__list_item__link__active {
+    padding: 5px 20px;
+    border-radius: 1px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    background-color: #1677ff;
+}
+
+/* BUTTON__AUTH */
+.header__auth_button {
+    padding: 5px 20px;
+    border-radius: 1px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: white;
+    background-color: #1F2A40;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.header__auth_button:hover {
+    background-color: #283f83;
+}
+
+.header__auth_button:nth-last-child(3) {
+    margin-right: 10px;
+}
+
+.header__auth_button:nth-last-child(2) {
+    margin-right: 0px;
+}
+
+/* PROFILE_BLOCK */
+.header__auth_profile_form {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.avatar_img {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    margin-right: 5px;
+    padding: 0;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+}
+
+.user_name {
+    margin-right: 10px;
+}

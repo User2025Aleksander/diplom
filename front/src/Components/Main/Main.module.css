@@ -1,0 +1,41 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .context {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .context__units {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* TABLE COMPONENT */
+  .table {
+    margin-bottom: 5px;
+  }
+  .color_col_1 {
+    background-color: khaki;
+  }
+  .color_col_2 {
+    min-width: 95px;
+    background-color: rgb(230, 227, 227);
+  }
+  .caption {
+    width: 100%;
+    font-size: 20px;
+    align-self: center;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    color: rgb(21, 21, 82);
+    font-weight: bold;
+  }
+  .text_center {
+    padding: 0px 5px;
+    text-align: center;
+  }
