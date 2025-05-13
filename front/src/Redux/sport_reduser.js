@@ -1,33 +1,33 @@
-import { OmsAPI } from "../API/OmsAPI/OmsAPI" //
+import { SportAPI } from "../API/SportAPI/SportAPI"
 
 let initialState = {}
-let GET_OMS = 'GET_OMS'
+let GET_SPORT = 'GET_SPORT'
 
-const dataOmsReduser = (state = initialState, action) => {
+const dataSportReduser = (state = initialState, action) => {
     switch (action.type) {
-        case GET_OMS:
+        case GET_SPORT:
             return [...action.payload]
         default:
             return state
     }
 }
 export const actions = {
-    getOMS: (values) => { 
+    getSPORT: (values) => {
         return {
-            type: GET_OMS, 
+            type: GET_SPORT,
             payload: values
         }
     }
 }
 // THUNK
 // GET
-export const getOmsTHUNK = () => {
+export const getSportTHUNK = () => { 
     return async (dispatch) => {
         try {
-            let dataDB = await OmsAPI.getOmsData().then((res) => {
+            let dataDB = await SportAPI.getSportData().then((res) => { 
                 return res.data
             })
-            await dispatch(actions.getOMS(dataDB))
+            await dispatch(actions.getSPORT(dataDB))
         } catch (err) {
             if (err.response) {
                 console.log('Error data:', err.response.data);
@@ -40,4 +40,4 @@ export const getOmsTHUNK = () => {
         }
     }
 }
-export default dataOmsReduser
+export default dataSportReduser

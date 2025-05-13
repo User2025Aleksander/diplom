@@ -1,33 +1,33 @@
-import { OmsAPI } from "../API/OmsAPI/OmsAPI" //
+import { OrgAPI } from "../API/OrgAPI/OrgAPI"
 
 let initialState = {}
-let GET_OMS = 'GET_OMS'
+let GET_ORG = 'GET_ORG'
 
-const dataOmsReduser = (state = initialState, action) => {
+const dataOrgReduser = (state = initialState, action) => {
     switch (action.type) {
-        case GET_OMS:
+        case GET_ORG: 
             return [...action.payload]
         default:
             return state
     }
 }
 export const actions = {
-    getOMS: (values) => { 
+    getORG: (values) => {
         return {
-            type: GET_OMS, 
+            type: GET_ORG,
             payload: values
         }
     }
 }
 // THUNK
 // GET
-export const getOmsTHUNK = () => {
+export const getOrgTHUNK = () => {
     return async (dispatch) => {
         try {
-            let dataDB = await OmsAPI.getOmsData().then((res) => {
+            let dataDB = await OrgAPI.getOrgData().then((res) => {
                 return res.data
             })
-            await dispatch(actions.getOMS(dataDB))
+            await dispatch(actions.getORG(dataDB))
         } catch (err) {
             if (err.response) {
                 console.log('Error data:', err.response.data);
@@ -40,4 +40,4 @@ export const getOmsTHUNK = () => {
         }
     }
 }
-export default dataOmsReduser
+export default dataOrgReduser

@@ -1,33 +1,33 @@
-import { OmsAPI } from "../API/OmsAPI/OmsAPI" //
+import { FlAPI } from "../API/FlAPI/FlAPI" //
 
 let initialState = {}
-let GET_OMS = 'GET_OMS'
+let GET_FL = 'GET_FL'
 
-const dataOmsReduser = (state = initialState, action) => {
+const dataFlReduser = (state = initialState, action) => {
     switch (action.type) {
-        case GET_OMS:
+        case GET_FL:
             return [...action.payload]
         default:
             return state
     }
 }
 export const actions = {
-    getOMS: (values) => { 
+    getFL: (values) => {
         return {
-            type: GET_OMS, 
+            type: GET_FL,
             payload: values
         }
     }
 }
 // THUNK
 // GET
-export const getOmsTHUNK = () => {
+export const getFlTHUNK = () => {
     return async (dispatch) => {
         try {
-            let dataDB = await OmsAPI.getOmsData().then((res) => {
+            let dataDB = await FlAPI.getFLData().then((res) => {
                 return res.data
             })
-            await dispatch(actions.getOMS(dataDB))
+            await dispatch(actions.getFL(dataDB))
         } catch (err) {
             if (err.response) {
                 console.log('Error data:', err.response.data);
@@ -40,4 +40,4 @@ export const getOmsTHUNK = () => {
         }
     }
 }
-export default dataOmsReduser
+export default dataFlReduser

@@ -1,33 +1,33 @@
-import { OmsAPI } from "../API/OmsAPI/OmsAPI" //
+import { GzAPI } from "../API/GzAPI/GzAPI"
 
 let initialState = {}
-let GET_OMS = 'GET_OMS'
+let GET_GZ = 'GET_GZ'
 
-const dataOmsReduser = (state = initialState, action) => {
+const dataGzReduser = (state = initialState, action) => {
     switch (action.type) {
-        case GET_OMS:
+        case GET_GZ:
             return [...action.payload]
         default:
             return state
     }
 }
 export const actions = {
-    getOMS: (values) => { 
+    getGZ: (values) => {
         return {
-            type: GET_OMS, 
+            type: GET_GZ,
             payload: values
         }
     }
 }
 // THUNK
 // GET
-export const getOmsTHUNK = () => {
+export const getGzTHUNK = () => {
     return async (dispatch) => {
         try {
-            let dataDB = await OmsAPI.getOmsData().then((res) => {
+            let dataDB = await GzAPI.getGzData().then((res) => {
                 return res.data
             })
-            await dispatch(actions.getOMS(dataDB))
+            await dispatch(actions.getGZ(dataDB))
         } catch (err) {
             if (err.response) {
                 console.log('Error data:', err.response.data);
@@ -40,4 +40,4 @@ export const getOmsTHUNK = () => {
         }
     }
 }
-export default dataOmsReduser
+export default dataGzReduser

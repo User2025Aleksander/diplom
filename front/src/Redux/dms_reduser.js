@@ -1,33 +1,33 @@
-import { OmsAPI } from "../API/OmsAPI/OmsAPI" //
+import { DmsAPI } from "../API/DmsAPI/DmsAPI"
 
 let initialState = {}
-let GET_OMS = 'GET_OMS'
+let GET_DMS = 'GET_DMS'
 
-const dataOmsReduser = (state = initialState, action) => {
+const dataDmsReduser = (state = initialState, action) => {
     switch (action.type) {
-        case GET_OMS:
+        case GET_DMS:
             return [...action.payload]
         default:
             return state
     }
 }
 export const actions = {
-    getOMS: (values) => { 
+    getDMS: (values) => {
         return {
-            type: GET_OMS, 
+            type: GET_DMS,
             payload: values
         }
     }
 }
 // THUNK
 // GET
-export const getOmsTHUNK = () => {
+export const getDmsTHUNK = () => { //
     return async (dispatch) => {
         try {
-            let dataDB = await OmsAPI.getOmsData().then((res) => {
+            let dataDB = await DmsAPI.getDmsData().then((res) => {
                 return res.data
             })
-            await dispatch(actions.getOMS(dataDB))
+            await dispatch(actions.getDMS(dataDB))
         } catch (err) {
             if (err.response) {
                 console.log('Error data:', err.response.data);
@@ -40,4 +40,4 @@ export const getOmsTHUNK = () => {
         }
     }
 }
-export default dataOmsReduser
+export default dataDmsReduser

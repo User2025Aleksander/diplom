@@ -1,33 +1,33 @@
-import { OmsAPI } from "../API/OmsAPI/OmsAPI" //
+import { VmpAPI } from "../API/VmpAPI/VmpAPI"
 
 let initialState = {}
-let GET_OMS = 'GET_OMS'
+let GET_VMP = 'GET_VMP'
 
-const dataOmsReduser = (state = initialState, action) => {
+const dataVmpReduser = (state = initialState, action) => {
     switch (action.type) {
-        case GET_OMS:
+        case GET_VMP: 
             return [...action.payload]
         default:
             return state
     }
 }
 export const actions = {
-    getOMS: (values) => { 
+    getVMP: (values) => {
         return {
-            type: GET_OMS, 
+            type: GET_VMP,
             payload: values
         }
     }
 }
 // THUNK
 // GET
-export const getOmsTHUNK = () => {
+export const getVmpTHUNK = () => {
     return async (dispatch) => {
         try {
-            let dataDB = await OmsAPI.getOmsData().then((res) => {
+            let dataDB = await VmpAPI.getVmpData().then((res) => {
                 return res.data
             })
-            await dispatch(actions.getOMS(dataDB))
+            await dispatch(actions.getVMP(dataDB))
         } catch (err) {
             if (err.response) {
                 console.log('Error data:', err.response.data);
@@ -40,4 +40,4 @@ export const getOmsTHUNK = () => {
         }
     }
 }
-export default dataOmsReduser
+export default dataVmpReduser

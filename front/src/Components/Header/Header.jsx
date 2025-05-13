@@ -38,12 +38,15 @@ export const Header = () => {
         department = JSON.parse(localStorage.getItem('department'))
     }
 
-    let authorization = (values) => {        
+    let authorization = (values) => {
         dispatch(getUsersThunk(values))
     }
 
     let openAuthForm = () => {
         dispatch(toggleAuthFormThunk(true))
+    }
+    let closeAuthForm = () => {
+        dispatch(toggleAuthFormThunk(false))
     }
     let openDataFormChange = () => {
         dispatch(toggleDataFormThunk(true))
@@ -54,7 +57,6 @@ export const Header = () => {
         dispatch(cleanUsersThunk(''))
         dispatch(toggleDataFormThunk(false))
     }
-
 
     return (
         <>
@@ -75,7 +77,7 @@ export const Header = () => {
                     {source.map((i, index) => <li key={index} className={css.header__ul__list_item}><NavLink to={`/${i.to}`} className={() => (window.location.pathname.split('/')[1] === `${i.to}` || window.location.pathname.split('/')[1] === '') ? css.header__ul__list_item__link__active : css.header__ul__list_item__link}>{i.name}</NavLink></li>)}
                 </ul>
                 {/* Форма авторизации */}
-                <AuthorizationForm authorization={authorization} authForm={authForm} authError={authError} />
+                <AuthorizationForm authorization={authorization} closeAuthForm={closeAuthForm} authForm={authForm} authError={authError} />
 
                 {(isAuth)
                     ?
@@ -90,7 +92,7 @@ export const Header = () => {
                     :
                     <button className={css.header__auth_button} onClick={openAuthForm}>Авторизация</button>
                 }
-            </nav>
+            </nav >
         </>
     )
 }

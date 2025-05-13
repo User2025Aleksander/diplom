@@ -1,10 +1,10 @@
 import React from 'react'
 import css from './Main.module.css'
 
-export const Main = () => {
+export const Main = ({ title }) => {
   return (
     <main className={css.main}>
-      <h2>Сводная</h2>
+      <h2>{title}</h2>
       <div className={css.context}>
         <div className={css.context__units}>
           <table className={css.table}>

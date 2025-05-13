@@ -1,10 +1,11 @@
 import css from './AuthorizarionForm.module.css'
 import { Form, Field, Formik } from 'formik'
 
-export const AuthorizationForm = ({ authorization, authForm, authError }) => {
+export const AuthorizationForm = ({ authorization, closeAuthForm, authForm, authError }) => {
     return (
         <div className={(authForm) ? css.authFormOpen : css.authFormClose}>
-            <div>
+            <button className={css.close_button} onClick={closeAuthForm}>X</button>
+            <div>                
                 <h1 className={css.h1}>Введите логин и пароль...</h1>
                 <Formik
                     initialValues={{ login: '', password: '' }}
