@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Main } from '../Main/Main'
 import { useDispatch, useSelector } from 'react-redux'
-import { getOrgTHUNK } from '../../Redux/ORG_reduser'
+import { getOrgTHUNK } from '../../Redux/org_reduser'
 
 export const OrgContainer = () => {
     let dispatch = useDispatch()
@@ -13,6 +13,6 @@ export const OrgContainer = () => {
     }, [dispatch])
 
     return (
-        <Main title={title} />
+        <Main title={title} data={dataDB} />
     )
 }

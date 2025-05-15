@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Main } from '../Main/Main'
 import { useDispatch, useSelector } from 'react-redux'
-import { getSportTHUNK } from '../../Redux/SPORT_reduser'
+import { getSportTHUNK } from '../../Redux/sport_reduser'
 
 export const SportContainer = () => {
     let dispatch = useDispatch()
@@ -13,6 +13,6 @@ export const SportContainer = () => {
     }, [dispatch])
 
     return (
-        <Main title={title} />
+        <Main title={title} data={dataDB} />
     )
 }

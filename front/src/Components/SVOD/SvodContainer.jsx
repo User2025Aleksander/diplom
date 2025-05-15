@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Main } from '../Main/Main'
 import { useDispatch, useSelector } from 'react-redux'
-import { getSvodTHUNK } from '../../Redux/SVOD_reduser'
+import { getSvodTHUNK } from '../../Redux/svod_reduser'
 
 export const SvodContainer = () => {
     let dispatch = useDispatch()
@@ -13,6 +13,6 @@ export const SvodContainer = () => {
     }, [dispatch])
 
     return (
-        <Main title={title} />
+        <Main title={title} data={dataDB} />
     )
 }

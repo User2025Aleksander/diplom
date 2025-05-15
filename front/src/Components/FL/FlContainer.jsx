@@ -13,6 +13,6 @@ export const FlContainer = () => {
     }, [dispatch])
 
     return (
-        <Main title={title} />
+        <Main title={title} data={dataDB} />
     )
 }

@@ -1,6 +1,21 @@
 import { OmsAPI } from "../API/OmsAPI/OmsAPI" //
 
-let initialState = {}
+let initialState = {
+    department: '',
+    january: '',
+    february: '',
+    march: '',
+    april: '',
+    may: '',
+    june: '',
+    july: '',
+    august: '',
+    september: '',
+    october: '',
+    november: '',
+    december: ''
+  }
+
 let GET_OMS = 'GET_OMS'
 
 const dataOmsReduser = (state = initialState, action) => {
@@ -12,7 +27,7 @@ const dataOmsReduser = (state = initialState, action) => {
     }
 }
 export const actions = {
-    getOMS: (values) => { 
+    getOMS: (values) => {
         return {
             type: GET_OMS, 
             payload: values

@@ -14,6 +14,6 @@ export const DmsContainer = () => {
     }, [dispatch])
 
     return (
-        <Main title={title} />
+        <Main title={title} data={dataDB} />
     )
 }

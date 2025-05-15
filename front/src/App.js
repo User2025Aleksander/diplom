@@ -1,6 +1,5 @@
 import React from 'react'
 import { Header } from './Components/Header/Header'
-import { Main } from './Components/Main/Main.jsx';
 import { Route, Routes } from 'react-router-dom';
 import { SvodContainer } from './Components/SVOD/SvodContainer.jsx';
 import { OmsContainer } from './Components/OMS/OmsContainer.jsx';
@@ -14,12 +13,13 @@ import { SportContainer } from './Components/SPORT/SportContainer.jsx';
 export const App = () => {
 
   // ДЗ
-//   УБРАТЬ ошибки
+  //  1.Дозаполнить Базу данных
+  // - case_vmp
+  
 
-//  Сделать в Postgres таблицу по User
-// 1. Без авторизации - показываем только СВОДНУЮ страницу
-// 2. Авторизация (watcher) - будет показываться все страницы
-// 3. Авторизация (administrator) - будет возможность заполнять ПЛАНЫ выполнения
+// 2. Добавить в postgress ФИО 2-х
+//  Авторизация (watcher) - будет показываться все страницы
+// Авторизация (administrator) - будет возможность заполнять ПЛАНЫ выполнения
 
 // login
 // Password

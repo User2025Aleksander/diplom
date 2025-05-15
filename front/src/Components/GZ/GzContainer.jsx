@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { Main } from '../Main/Main'
 import { useDispatch, useSelector } from 'react-redux'
-import { getGzTHUNK } from '../../Redux/GZ_reduser'
+import { getGzTHUNK } from '../../Redux/gz_reduser'
 
-export const FlContainer = () => {
+export const GzContainer = () => {
     let dispatch = useDispatch()
     let title = 'ГЗ'
     let dataDB = useSelector((state) => state.GZ)
@@ -13,6 +13,6 @@ export const FlContainer = () => {
     }, [dispatch])
 
     return (
-        <Main title={title} />
+        <Main title={title} data={dataDB} />
     )
 }
